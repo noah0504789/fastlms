@@ -37,3 +37,4 @@ build/
 /mvnw
 /mvnw.cmd
 /.documents/**
+src/main/resources/application.yml
