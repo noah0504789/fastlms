@@ -2,7 +2,7 @@ package com.zerobase.fastlms.member.controller;
 
 import com.zerobase.fastlms.member.model.MemberInput;
 import com.zerobase.fastlms.member.repository.MemberRepository;
-import com.zerobase.fastlms.member.service.MemberServiceImpl;
+import com.zerobase.fastlms.member.service.Impl.MemberServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 @AllArgsConstructor
 public class MemberController {
 
-    private final MemberRepository memberRepository;
     private final MemberServiceImpl memberService;
 
     @GetMapping(value = "/member/register")
@@ -31,6 +30,16 @@ public class MemberController {
         model.addAttribute("result", result);
 
         return "member/register_complate";
+    }
+
+    @GetMapping("/member/email-auth")
+    public String emailAuth(HttpServletRequest request, Model model) {
+        String uuid = request.getParameter("id");
+
+        boolean result = memberService.emailAuth(uuid);
+        model.addAttribute("result", result);
+
+        return "member/email_auth";
     }
 
 }
