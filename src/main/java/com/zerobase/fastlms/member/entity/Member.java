@@ -32,4 +32,7 @@ public class Member {
     private String resetPasswordKey;
     private LocalDateTime resetPasswordLimitDt; // resetPasswordKey가 유효한지 체크
 
+    // 회원에 따른 ROLE을 지정하기
+    private boolean adminYn;
+
 }
