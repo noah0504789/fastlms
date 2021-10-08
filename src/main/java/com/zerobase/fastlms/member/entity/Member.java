@@ -28,4 +28,8 @@ public class Member {
     private boolean emailAuthYn;
     private LocalDateTime emailAuthDt;
     private String emailAuthKey;
+
+    private String resetPasswordKey;
+    private LocalDateTime resetPasswordLimitDt; // resetPasswordKey가 유효한지 체크
+
 }
