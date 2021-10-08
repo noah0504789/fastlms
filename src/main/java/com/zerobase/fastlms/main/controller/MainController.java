@@ -1,4 +1,4 @@
-package com.zerobase.fastlms;
+package com.zerobase.fastlms.main.controller;
 
 import com.zerobase.fastlms.component.MailComponent;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 
 @Controller
 @AllArgsConstructor
-public class MainPage {
+public class MainController {
 
     private final MailComponent mailComponent;
 
